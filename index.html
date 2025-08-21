@@ -62,6 +62,63 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
+        /* Gallery styles */
+        .gallery-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-tab.active {
+            background-color: #f97316;
+            color: white;
+        }
+        
+        .gallery-content {
+            display: none;
+        }
+        
+        .gallery-content.active {
+            display: block;
+        }
+        
+        .gallery-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-image:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Optimized section spacing */
+        .section-compact { padding: 3rem 0; }
+        .section-standard { padding: 4rem 0; }
     </style>
 </head>
 <body class="font-inter bg-white">
@@ -76,12 +133,13 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="#home" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Home</a>
                     <a href="#about" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">About</a>
                     <a href="#capabilities" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Capabilities</a>
                     <a href="#industries" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Industries</a>
                     <a href="#products" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Products</a>
+                    <a href="#gallery" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
                     <a href="#case-studies" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Case Studies</a>
                     <a href="#quality" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Quality</a>
                     <a href="#contact" class="text-industrial-gray hover:text-accent-orange px-3 py-2 text-sm font-medium transition-colors">Contact</a>
@@ -105,6 +163,7 @@
                 <a href="#capabilities" class="text-industrial-gray hover:text-accent-orange block px-3 py-2 text-base font-medium">Capabilities</a>
                 <a href="#industries" class="text-industrial-gray hover:text-accent-orange block px-3 py-2 text-base font-medium">Industries</a>
                 <a href="#products" class="text-industrial-gray hover:text-accent-orange block px-3 py-2 text-base font-medium">Products</a>
+                <a href="#gallery" class="text-industrial-gray hover:text-accent-orange block px-3 py-2 text-base font-medium">Gallery</a>
                 <a href="#case-studies" class="text-industrial-gray hover:text-accent-orange block px-3 py-2 text-base font-medium">Case Studies</a>
                 <a href="#quality" class="text-industrial-gray hover:text-accent-orange block px-3 py-2 text-base font-medium">Quality</a>
                 <div class="pt-4 pb-3 border-t border-gray-200">
@@ -115,9 +174,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Optimized -->
     <section id="home" class="pt-16 hero-gradient text-white min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="text-center">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
                     Precision Manufacturing
@@ -140,94 +199,107 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <!-- About Section - Compact -->
+    <section id="about" class="section-standard bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">About Allied Industries</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Manufacturing excellence since 1998 with a commitment to precision, quality, and innovation.</p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            <div class="grid lg:grid-cols-3 gap-8 items-start">
+                <!-- Company Story -->
+                <div class="lg:col-span-2">
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
                         Founded in 1998, Allied Industries has evolved from a small machine shop into a comprehensive manufacturing facility serving major OEMs and industrial customers across India.
                     </p>
                     
-                    <!-- Company Timeline -->
-                    <div class="bg-gray-50 rounded-xl p-8 mb-8">
-                        <h3 class="text-xl font-bold text-industrial-dark mb-6">Our Journey</h3>
-                        <!-- Timeline -->
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-accent-orange rounded-full mr-4"></div>
-                                <span class="font-semibold mr-2">1998:</span>
-                                <span class="text-gray-600">Company founded with 5 employees</span>
+                    <!-- Compact Timeline -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="text-lg font-bold text-industrial-dark mb-4">Key Milestones</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-accent-orange rounded-full mr-3"></div>
+                                    <span class="text-sm"><strong>1998:</strong> Company founded</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-accent-orange rounded-full mr-3"></div>
+                                    <span class="text-sm"><strong>2005:</strong> ISO 9001:2008 certified</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-accent-orange rounded-full mr-3"></div>
+                                    <span class="text-sm"><strong>2015:</strong> ISO 9001:2015 upgrade</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-accent-orange rounded-full mr-3"></div>
+                                    <span class="text-sm"><strong>2020:</strong> Advanced CNC center</span>
+                                </div>
                             </div>
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-accent-orange rounded-full mr-4"></div>
-                                <span class="font-semibold mr-2">2005:</span>
-                                <span class="text-gray-600">ISO 9001:2008 certification achieved</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-accent-orange rounded-full mr-4"></div>
-                                <span class="font-semibold mr-2">2015:</span>
-                                <span class="text-gray-600">Upgraded to ISO 9001:2015 standards</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-accent-orange rounded-full mr-4"></div>
-                                <span class="font-semibold mr-2">2020:</span>
-                                <span class="text-gray-600">Advanced CNC machining center established</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-accent-orange rounded-full mr-4"></div>
-                                <span class="font-semibold mr-2">2024:</span>
-                                <span class="text-gray-600">50+ skilled professionals, serving 100+ clients</span>
+                        </div>
+
+                        <!-- Quick Stats -->
+                        <div class="bg-gradient-to-br from-industrial-blue to-industrial-gray text-white rounded-lg p-6">
+                            <h3 class="text-lg font-bold mb-4">At a Glance</h3>
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div>
+                                    <div class="text-2xl font-bold text-accent-orange">25+</div>
+                                    <div class="text-sm">Years</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-accent-orange">50+</div>
+                                    <div class="text-sm">Professionals</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-accent-orange">100+</div>
+                                    <div class="text-sm">Clients</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-accent-orange">99.5%</div>
+                                    <div class="text-sm">Quality Rate</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="space-y-8">
-                    <!-- Mission -->
-                    <div class="bg-gradient-to-r from-industrial-blue to-industrial-gray text-white rounded-xl p-8">
-                        <h3 class="text-2xl font-bold mb-4">
-                            <i class="fas fa-bullseye mr-3 text-accent-orange"></i>
-                            Our Mission
+                <!-- Mission & Vision - Compact -->
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-accent-orange to-orange-600 text-white rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">
+                            <i class="fas fa-bullseye mr-2"></i>Mission
                         </h3>
-                        <p class="text-lg">To be India's most trusted precision manufacturing partner, delivering exceptional quality, innovation, and customer satisfaction in every project we undertake.</p>
+                        <p class="text-sm">To be India's most trusted precision manufacturing partner, delivering exceptional quality and innovation.</p>
                     </div>
                     
-                    <!-- Vision -->
-                    <div class="bg-gradient-to-r from-accent-orange to-orange-600 text-white rounded-xl p-8">
-                        <h3 class="text-2xl font-bold mb-4">
-                            <i class="fas fa-eye mr-3"></i>
-                            Our Vision
+                    <div class="bg-gradient-to-r from-industrial-blue to-blue-700 text-white rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">
+                            <i class="fas fa-eye mr-2"></i>Vision
                         </h3>
-                        <p class="text-lg">To become a global leader in precision manufacturing, setting industry standards through continuous innovation, advanced technology, and sustainable practices.</p>
+                        <p class="text-sm">To become a global leader in precision manufacturing through continuous innovation and advanced technology.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Capabilities Section -->
-    <section id="capabilities" class="py-20 bg-gray-50">
+    <!-- Capabilities Section - Optimized Grid -->
+    <section id="capabilities" class="section-standard bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Manufacturing Capabilities</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive manufacturing solutions with advanced technology and precision engineering.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- CNC Machining -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-cog text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cog text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4 text-center">CNC Machining</h3>
-                    <p class="text-gray-600 text-center mb-6">Precision CNC machining with tolerances up to ±0.005mm for complex components and high-volume production.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3 text-center">CNC Machining</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Precision CNC machining with tolerances up to ±0.005mm for complex components.</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
                         <li>• 3, 4, and 5-axis CNC machines</li>
                         <li>• Materials: Steel, Aluminum, Brass, Plastics</li>
                         <li>• Batch sizes: 1 to 10,000+ pieces</li>
@@ -235,13 +307,13 @@
                 </div>
                 
                 <!-- Metal Fabrication -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-industry text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4 text-center">Metal Fabrication</h3>
-                    <p class="text-gray-600 text-center mb-6">Custom metal fabrication services including cutting, bending, welding, and finishing operations.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3 text-center">Metal Fabrication</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Custom metal fabrication services including cutting, bending, welding.</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
                         <li>• Laser cutting and plasma cutting</li>
                         <li>• TIG, MIG, and Arc welding</li>
                         <li>• Sheet metal up to 25mm thickness</li>
@@ -249,13 +321,13 @@
                 </div>
                 
                 <!-- Assembly Services -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-tools text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4 text-center">Assembly Services</h3>
-                    <p class="text-gray-600 text-center mb-6">Complete mechanical and electro-mechanical assembly with rigorous quality control processes.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3 text-center">Assembly Services</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Complete mechanical and electro-mechanical assembly services.</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
                         <li>• Sub-assembly and final assembly</li>
                         <li>• Functional testing and validation</li>
                         <li>• Packaging and logistics support</li>
@@ -263,13 +335,13 @@
                 </div>
                 
                 <!-- Tooling & Fixtures -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-wrench text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-wrench text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4 text-center">Tooling & Fixtures</h3>
-                    <p class="text-gray-600 text-center mb-6">Custom tooling design and manufacturing for production optimization and quality assurance.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3 text-center">Tooling & Fixtures</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Custom tooling design and manufacturing for production optimization.</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
                         <li>• Jigs and fixtures design</li>
                         <li>• Production tooling</li>
                         <li>• Inspection gauges</li>
@@ -277,13 +349,13 @@
                 </div>
                 
                 <!-- Quality Control -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-search text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4 text-center">Quality Control</h3>
-                    <p class="text-gray-600 text-center mb-6">Advanced inspection and quality control with CMM, optical comparators, and precision instruments.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3 text-center">Quality Control</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Advanced inspection and quality control with precision instruments.</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
                         <li>• CMM inspection services</li>
                         <li>• First article inspection</li>
                         <li>• Statistical process control</li>
@@ -291,13 +363,13 @@
                 </div>
                 
                 <!-- Engineering Support -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-drafting-compass text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-drafting-compass text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4 text-center">Engineering Support</h3>
-                    <p class="text-gray-600 text-center mb-6">Design for manufacturability, process optimization, and technical consultation services.</p>
-                    <ul class="text-sm text-gray-600 space-y-2">
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3 text-center">Engineering Support</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Design for manufacturability and process optimization services.</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
                         <li>• DFM analysis and optimization</li>
                         <li>• Process development</li>
                         <li>• Technical documentation</li>
@@ -307,94 +379,90 @@
         </div>
     </section>
 
-    <!-- Industries Section -->
-    <section id="industries" class="py-20 bg-white">
+    <!-- Industries Section - Compact -->
+    <section id="industries" class="section-compact bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Industries We Serve</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trusted manufacturing partner across diverse industrial sectors.</p>
+                <p class="text-lg text-gray-600">Trusted manufacturing partner across diverse industrial sectors.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Automotive -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 text-center card-hover">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-car text-2xl text-white"></i>
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-car text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4">Automotive</h3>
-                    <p class="text-gray-600 text-sm mb-4">Engine components, transmission parts, chassis components, and precision automotive tooling.</p>
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3">Automotive</h3>
+                    <p class="text-gray-600 text-sm mb-3">Engine components, transmission parts, chassis components.</p>
                     <ul class="text-xs text-gray-600 space-y-1">
                         <li>• Engine blocks and heads</li>
                         <li>• Transmission components</li>
                         <li>• Brake system parts</li>
-                        <li>• Suspension components</li>
                     </ul>
                 </div>
                 
                 <!-- Energy & Power -->
-                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 text-center card-hover">
-                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bolt text-2xl text-white"></i>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4">Energy & Power</h3>
-                    <p class="text-gray-600 text-sm mb-4">Power generation equipment, renewable energy components, and electrical infrastructure parts.</p>
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3">Energy & Power</h3>
+                    <p class="text-gray-600 text-sm mb-3">Power generation equipment, renewable energy components.</p>
                     <ul class="text-xs text-gray-600 space-y-1">
                         <li>• Turbine components</li>
                         <li>• Generator parts</li>
                         <li>• Solar mounting systems</li>
-                        <li>• Electrical enclosures</li>
                     </ul>
                 </div>
                 
                 <!-- Industrial Equipment -->
-                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-8 text-center card-hover">
-                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-industry text-2xl text-white"></i>
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4">Industrial Equipment</h3>
-                    <p class="text-gray-600 text-sm mb-4">Heavy machinery components, industrial automation parts, and material handling equipment.</p>
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3">Industrial Equipment</h3>
+                    <p class="text-gray-600 text-sm mb-3">Heavy machinery components, automation parts.</p>
                     <ul class="text-xs text-gray-600 space-y-1">
                         <li>• Machine tool components</li>
                         <li>• Conveyor systems</li>
                         <li>• Hydraulic components</li>
-                        <li>• Automation fixtures</li>
                     </ul>
                 </div>
                 
                 <!-- Aerospace -->
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 text-center card-hover">
-                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-plane text-2xl text-white"></i>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-plane text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4">Aerospace</h3>
-                    <p class="text-gray-600 text-sm mb-4">Precision aerospace components, aircraft parts, and defense equipment with stringent quality requirements.</p>
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3">Aerospace</h3>
+                    <p class="text-gray-600 text-sm mb-3">Precision aerospace components, aircraft parts.</p>
                     <ul class="text-xs text-gray-600 space-y-1">
                         <li>• Aircraft structural parts</li>
                         <li>• Engine components</li>
                         <li>• Landing gear parts</li>
-                        <li>• Avionics housings</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-20 bg-gray-50">
+    <!-- Products Section - Compact -->
+    <section id="products" class="section-compact bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Product Portfolio</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive range of precision-manufactured components and assemblies.</p>
+                <p class="text-lg text-gray-600">Comprehensive range of precision-manufactured components and assemblies.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6">
                 <!-- Machined Components -->
-                <div class="bg-white rounded-xl p-8 shadow-lg">
-                    <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-cog text-4xl text-gray-400"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <div class="mb-4">
+                        <div class="w-full h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mb-3">
+                            <i class="fas fa-cog text-3xl text-gray-400"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-industrial-dark mb-2">Precision Machined Components</h3>
+                        <h3 class="text-lg font-bold text-industrial-dark mb-2">Precision Machined Components</h3>
                         <p class="text-gray-600 text-sm">High-precision components with tight tolerances for critical applications.</p>
                     </div>
                     <div class="space-y-2 text-sm text-gray-600">
@@ -406,20 +474,16 @@
                             <span>Tolerance:</span>
                             <span class="font-medium">±0.005mm</span>
                         </div>
-                        <div class="flex justify-between">
-                            <span>Size Range:</span>
-                            <span class="font-medium">5mm - 500mm</span>
-                        </div>
                     </div>
                 </div>
                 
                 <!-- Fabricated Assemblies -->
-                <div class="bg-white rounded-xl p-8 shadow-lg">
-                    <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-cube text-4xl text-blue-400"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <div class="mb-4">
+                        <div class="w-full h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-3">
+                            <i class="fas fa-cube text-3xl text-blue-400"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-industrial-dark mb-2">Fabricated Assemblies</h3>
+                        <h3 class="text-lg font-bold text-industrial-dark mb-2">Fabricated Assemblies</h3>
                         <p class="text-gray-600 text-sm">Complex welded and assembled structures for industrial applications.</p>
                     </div>
                     <div class="space-y-2 text-sm text-gray-600">
@@ -431,30 +495,22 @@
                             <span>Welding:</span>
                             <span class="font-medium">TIG, MIG, Arc</span>
                         </div>
-                        <div class="flex justify-between">
-                            <span>Finishing:</span>
-                            <span class="font-medium">Powder Coating, Painting</span>
-                        </div>
                     </div>
                 </div>
                 
                 <!-- Tooling Solutions -->
-                <div class="bg-white rounded-xl p-8 shadow-lg">
-                    <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-wrench text-4xl text-orange-400"></i>
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <div class="mb-4">
+                        <div class="w-full h-32 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center mb-3">
+                            <i class="fas fa-wrench text-3xl text-orange-400"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-industrial-dark mb-2">Custom Tooling Solutions</h3>
-                        <p class="text-gray-600 text-sm">Specialized jigs, fixtures, and production tooling for manufacturing optimization.</p>
+                        <h3 class="text-lg font-bold text-industrial-dark mb-2">Custom Tooling Solutions</h3>
+                        <p class="text-gray-600 text-sm">Specialized jigs, fixtures, and production tooling.</p>
                     </div>
                     <div class="space-y-2 text-sm text-gray-600">
                         <div class="flex justify-between">
                             <span>Types:</span>
                             <span class="font-medium">Jigs, Fixtures, Dies</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>Applications:</span>
-                            <span class="font-medium">Production, Inspection</span>
                         </div>
                         <div class="flex justify-between">
                             <span>Lead Time:</span>
@@ -466,67 +522,469 @@
         </div>
     </section>
 
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="py-20 bg-white">
+    <!-- NEW GALLERY SECTION -->
+    <section id="gallery" class="section-standard bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Success Stories</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Real results from our manufacturing partnerships and precision engineering projects.</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Our Facilities & Products Gallery</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore our state-of-the-art manufacturing facilities, advanced equipment, and precision-crafted products.</p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Gallery Tabs -->
+            <div class="flex flex-wrap justify-center mb-8 bg-gray-100 rounded-lg p-2">
+                <button class="gallery-tab px-6 py-3 rounded-lg font-medium text-sm mx-1 mb-2 active" data-tab="factory">
+                    <i class="fas fa-building mr-2"></i>Factory Facility
+                </button>
+                <button class="gallery-tab px-6 py-3 rounded-lg font-medium text-sm mx-1 mb-2" data-tab="manufacturing">
+                    <i class="fas fa-cogs mr-2"></i>Manufacturing Equipment
+                </button>
+                <button class="gallery-tab px-6 py-3 rounded-lg font-medium text-sm mx-1 mb-2" data-tab="products">
+                    <i class="fas fa-cube mr-2"></i>Products & Components
+                </button>
+                <button class="gallery-tab px-6 py-3 rounded-lg font-medium text-sm mx-1 mb-2" data-tab="quality">
+                    <i class="fas fa-search mr-2"></i>Quality Control
+                </button>
+            </div>
+            
+            <!-- Factory Facility Gallery -->
+            <div id="factory" class="gallery-content active">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-image h-64 bg-gradient-to-br from-gray-200 to-gray-300">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-gray-600">
+                                <i class="fas fa-building text-4xl mb-2"></i>
+                                <p class="font-medium">Main Production Floor</p>
+                                <p class="text-sm">5000 sq ft manufacturing space</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Production Floor</h4>
+                            <p class="text-sm">Our spacious 5000 sq ft production floor houses multiple manufacturing lines with climate-controlled environment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-blue-200 to-blue-300">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-blue-700">
+                                <i class="fas fa-warehouse text-4xl mb-2"></i>
+                                <p class="font-medium">Raw Material Storage</p>
+                                <p class="text-sm">Organized inventory management</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Material Storage</h4>
+                            <p class="text-sm">Climate-controlled storage facility with advanced inventory management system for raw materials.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-green-200 to-green-300">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-green-700">
+                                <i class="fas fa-hard-hat text-4xl mb-2"></i>
+                                <p class="font-medium">Safety Standards</p>
+                                <p class="text-sm">ISO compliant safety protocols</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Safety First</h4>
+                            <p class="text-sm">Comprehensive safety protocols and training programs ensuring zero-accident workplace environment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-purple-200 to-purple-300">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-purple-700">
+                                <i class="fas fa-users text-4xl mb-2"></i>
+                                <p class="font-medium">Team Workspace</p>
+                                <p class="text-sm">Collaborative work environment</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Team Excellence</h4>
+                            <p class="text-sm">Modern workspace designed for collaboration, innovation, and continuous improvement initiatives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-red-200 to-red-300">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-red-700">
+                                <i class="fas fa-shipping-fast text-4xl mb-2"></i>
+                                <p class="font-medium">Dispatch Center</p>
+                                <p class="text-sm">Efficient logistics & shipping</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Dispatch & Logistics</h4>
+                            <p class="text-sm">Streamlined dispatch center ensuring timely delivery with proper packaging and quality checks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-yellow-200 to-yellow-300">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-yellow-700">
+                                <i class="fas fa-solar-panel text-4xl mb-2"></i>
+                                <p class="font-medium">Sustainable Operations</p>
+                                <p class="text-sm">Green manufacturing practices</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Sustainability</h4>
+                            <p class="text-sm">Solar-powered operations and waste management systems supporting environmental responsibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Manufacturing Equipment Gallery -->
+            <div id="manufacturing" class="gallery-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-image h-64 bg-gradient-to-br from-gray-300 to-gray-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-gray-700">
+                                <i class="fas fa-cog text-4xl mb-2"></i>
+                                <p class="font-medium">5-Axis CNC Machine</p>
+                                <p class="text-sm">High precision machining</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">5-Axis CNC Center</h4>
+                            <p class="text-sm">Advanced 5-axis CNC machining center capable of complex geometries with ±0.005mm tolerance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-orange-300 to-red-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-red-700">
+                                <i class="fas fa-fire text-4xl mb-2"></i>
+                                <p class="font-medium">Welding Station</p>
+                                <p class="text-sm">TIG, MIG & Arc welding</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Advanced Welding</h4>
+                            <p class="text-sm">Multi-process welding station with automated controls for consistent, high-quality welds.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-blue-300 to-indigo-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-indigo-700">
+                                <i class="fas fa-cut text-4xl mb-2"></i>
+                                <p class="font-medium">Laser Cutting</p>
+                                <p class="text-sm">Precision cutting technology</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Laser Cutting System</h4>
+                            <p class="text-sm">High-power laser cutting system for precise material processing up to 25mm thickness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-green-300 to-teal-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-teal-700">
+                                <i class="fas fa-hammer text-4xl mb-2"></i>
+                                <p class="font-medium">Forming Press</p>
+                                <p class="text-sm">Metal forming & bending</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Hydraulic Press</h4>
+                            <p class="text-sm">High-tonnage hydraulic press for metal forming, bending, and shaping operations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-purple-300 to-pink-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-pink-700">
+                                <i class="fas fa-tools text-4xl mb-2"></i>
+                                <p class="font-medium">Assembly Line</p>
+                                <p class="text-sm">Automated assembly systems</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Assembly Systems</h4>
+                            <p class="text-sm">Automated assembly line with robotic assistance for consistent, efficient production.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-yellow-300 to-orange-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-orange-700">
+                                <i class="fas fa-paint-brush text-4xl mb-2"></i>
+                                <p class="font-medium">Finishing Booth</p>
+                                <p class="text-sm">Surface treatment & coating</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Finishing Operations</h4>
+                            <p class="text-sm">Dedicated finishing booth for powder coating, painting, and surface treatment processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products & Components Gallery -->
+            <div id="products" class="gallery-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="gallery-image h-48 bg-gradient-to-br from-gray-200 to-gray-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-gray-700">
+                                <i class="fas fa-cog text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Precision Gears</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Automotive Gears</h4>
+                            <p class="text-sm">High-precision transmission gears with superior surface finish and tight tolerances.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-48 bg-gradient-to-br from-blue-200 to-blue-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-blue-700">
+                                <i class="fas fa-cube text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Engine Blocks</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Engine Components</h4>
+                            <p class="text-sm">Precision-machined engine blocks and cylinder heads for automotive applications.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-48 bg-gradient-to-br from-green-200 to-green-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-green-700">
+                                <i class="fas fa-bolt text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Turbine Parts</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Power Generation</h4>
+                            <p class="text-sm">Critical turbine components for renewable energy and power generation systems.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-48 bg-gradient-to-br from-orange-200 to-orange-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-orange-700">
+                                <i class="fas fa-wrench text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Custom Fixtures</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Manufacturing Aids</h4>
+                            <p class="text-sm">Custom-designed jigs and fixtures for enhanced production efficiency and quality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-48 bg-gradient-to-br from-purple-200 to-purple-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-purple-700">
+                                <i class="fas fa-plane text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Aerospace Parts</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Aerospace Components</h4>
+                            <p class="text-sm">High-strength aerospace components meeting stringent quality and safety standards.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-48 bg-gradient-to-br from-red-200 to-red-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-red-700">
+                                <i class="fas fa-industry text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Industrial Parts</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Heavy Machinery</h4>
+                            <p class="text-sm">Robust industrial components for heavy machinery and material handling equipment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-48 bg-gradient-to-br from-teal-200 to-teal-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-teal-700">
+                                <i class="fas fa-layer-group text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Sheet Metal</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Fabricated Assemblies</h4>
+                            <p class="text-sm">Complex sheet metal fabrications with precision forming and welding.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-48 bg-gradient-to-br from-pink-200 to-pink-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-pink-700">
+                                <i class="fas fa-gem text-3xl mb-2"></i>
+                                <p class="font-medium text-sm">Precision Tools</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Cutting Tools</h4>
+                            <p class="text-sm">High-precision cutting tools and dies for various manufacturing applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quality Control Gallery -->
+            <div id="quality" class="gallery-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-image h-64 bg-gradient-to-br from-blue-200 to-blue-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-blue-700">
+                                <i class="fas fa-search text-4xl mb-2"></i>
+                                <p class="font-medium">CMM Inspection</p>
+                                <p class="text-sm">Coordinate measuring machine</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">CMM Laboratory</h4>
+                            <p class="text-sm">State-of-the-art coordinate measuring machine for precise dimensional inspection and verification.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-green-200 to-green-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-green-700">
+                                <i class="fas fa-microscope text-4xl mb-2"></i>
+                                <p class="font-medium">Material Testing</p>
+                                <p class="text-sm">Metallurgical analysis</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Material Laboratory</h4>
+                            <p class="text-sm">Advanced material testing and metallurgical analysis for quality assurance and certification.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-orange-200 to-orange-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-orange-700">
+                                <i class="fas fa-chart-line text-4xl mb-2"></i>
+                                <p class="font-medium">SPC Monitoring</p>
+                                <p class="text-sm">Statistical process control</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Process Control</h4>
+                            <p class="text-sm">Real-time statistical process control monitoring for consistent quality and continuous improvement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-purple-200 to-purple-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-purple-700">
+                                <i class="fas fa-certificate text-4xl mb-2"></i>
+                                <p class="font-medium">ISO Compliance</p>
+                                <p class="text-sm">Quality management system</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">ISO Certification</h4>
+                            <p class="text-sm">ISO 9001:2015 certified quality management system ensuring consistent excellence.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-red-200 to-red-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-red-700">
+                                <i class="fas fa-clipboard-check text-4xl mb-2"></i>
+                                <p class="font-medium">Final Inspection</p>
+                                <p class="text-sm">100% quality verification</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Final QC Station</h4>
+                            <p class="text-sm">Comprehensive final inspection station ensuring 100% quality verification before dispatch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-image h-64 bg-gradient-to-br from-teal-200 to-teal-400">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <div class="text-center text-teal-700">
+                                <i class="fas fa-file-alt text-4xl mb-2"></i>
+                                <p class="font-medium">Documentation</p>
+                                <p class="text-sm">Complete traceability</p>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 class="font-bold">Quality Records</h4>
+                            <p class="text-sm">Comprehensive documentation and traceability system for complete quality assurance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section - Compact -->
+    <section id="case-studies" class="section-compact bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Success Stories</h2>
+                <p class="text-lg text-gray-600">Real results from our manufacturing partnerships and precision engineering projects.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Case Study 1 -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-car text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-industrial-dark">Automotive Transmission Components</h3>
-                            <p class="text-blue-600 font-medium">Leading Auto OEM</p>
+                            <h3 class="text-lg font-bold text-industrial-dark">Automotive Transmission</h3>
+                            <p class="text-blue-600 font-medium text-sm">Leading Auto OEM</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-6">Delivered 50,000+ precision transmission gears with 99.8% quality acceptance rate, reducing client's production costs by 15% through design optimization.</p>
-                    <div class="grid grid-cols-3 gap-4 text-center">
+                    <p class="text-gray-700 mb-4 text-sm">Delivered 50,000+ precision transmission gears with 99.8% quality acceptance rate, reducing client's production costs by 15%.</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
                         <div>
-                            <div class="text-2xl font-bold text-blue-600">50K+</div>
-                            <div class="text-sm text-gray-600">Components</div>
+                            <div class="text-lg font-bold text-blue-600">50K+</div>
+                            <div class="text-xs text-gray-600">Components</div>
                         </div>
                         <div>
-                            <div class="text-2xl font-bold text-blue-600">99.8%</div>
-                            <div class="text-sm text-gray-600">Quality Rate</div>
+                            <div class="text-lg font-bold text-blue-600">99.8%</div>
+                            <div class="text-xs text-gray-600">Quality Rate</div>
                         </div>
                         <div>
-                            <div class="text-2xl font-bold text-blue-600">15%</div>
-                            <div class="text-sm text-gray-600">Cost Reduction</div>
+                            <div class="text-lg font-bold text-blue-600">15%</div>
+                            <div class="text-xs text-gray-600">Cost Reduction</div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Case Study 2 -->
-                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-bolt text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-industrial-dark">Power Generation Equipment</h3>
-                            <p class="text-green-600 font-medium">Energy Sector Client</p>
+                            <h3 class="text-lg font-bold text-industrial-dark">Power Generation</h3>
+                            <p class="text-green-600 font-medium text-sm">Energy Sector Client</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-6">Manufactured critical turbine components for renewable energy project, meeting stringent specifications and delivery timelines for 20MW installation.</p>
-                    <div class="grid grid-cols-3 gap-4 text-center">
+                    <p class="text-gray-700 mb-4 text-sm">Manufactured critical turbine components for renewable energy project, meeting stringent specifications for 20MW installation.</p>
+                    <div class="grid grid-cols-3 gap-3 text-center">
                         <div>
-                            <div class="text-2xl font-bold text-green-600">20MW</div>
-                            <div class="text-sm text-gray-600">Power Capacity</div>
+                            <div class="text-lg font-bold text-green-600">20MW</div>
+                            <div class="text-xs text-gray-600">Power Capacity</div>
                         </div>
                         <div>
-                            <div class="text-2xl font-bold text-green-600">100%</div>
-                            <div class="text-sm text-gray-600">On-Time Delivery</div>
+                            <div class="text-lg font-bold text-green-600">100%</div>
+                            <div class="text-xs text-gray-600">On-Time</div>
                         </div>
                         <div>
-                            <div class="text-2xl font-bold text-green-600">Zero</div>
-                            <div class="text-sm text-gray-600">Defects</div>
+                            <div class="text-lg font-bold text-green-600">Zero</div>
+                            <div class="text-xs text-gray-600">Defects</div>
                         </div>
                     </div>
                 </div>
@@ -534,93 +992,93 @@
         </div>
     </section>
 
-    <!-- Quality Section -->
-    <section id="quality" class="py-20 bg-gray-50">
+    <!-- Quality Section - Compact -->
+    <section id="quality" class="section-compact bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Quality & Certifications</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Committed to excellence through rigorous quality standards and certified processes.</p>
+                <p class="text-lg text-gray-600">Committed to excellence through rigorous quality standards and certified processes.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <!-- ISO Certification -->
-                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-certificate text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center border">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-certificate text-xl text-white"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-industrial-dark mb-2">ISO 9001:2015</h3>
-                    <p class="text-gray-600 text-sm">Quality Management System certified for consistent quality delivery.</p>
+                    <h3 class="text-md font-bold text-industrial-dark mb-2">ISO 9001:2015</h3>
+                    <p class="text-gray-600 text-sm">Quality Management System certified.</p>
                 </div>
                 
                 <!-- Quality Control -->
-                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
-                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-search text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center border">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-search text-xl text-white"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-industrial-dark mb-2">Advanced Inspection</h3>
-                    <p class="text-gray-600 text-sm">CMM, optical comparators, and precision measurement tools.</p>
+                    <h3 class="text-md font-bold text-industrial-dark mb-2">Advanced Inspection</h3>
+                    <p class="text-gray-600 text-sm">CMM and precision measurement tools.</p>
                 </div>
                 
                 <!-- Process Control -->
-                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
-                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center border">
+                    <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-chart-line text-xl text-white"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-industrial-dark mb-2">Statistical Control</h3>
-                    <p class="text-gray-600 text-sm">SPC implementation for process monitoring and continuous improvement.</p>
+                    <h3 class="text-md font-bold text-industrial-dark mb-2">Statistical Control</h3>
+                    <p class="text-gray-600 text-sm">SPC implementation for monitoring.</p>
                 </div>
                 
                 <!-- Documentation -->
-                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
-                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-file-alt text-2xl text-white"></i>
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center border">
+                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-file-alt text-xl text-white"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-industrial-dark mb-2">Documentation</h3>
-                    <p class="text-gray-600 text-sm">Complete traceability and quality documentation for all processes.</p>
+                    <h3 class="text-md font-bold text-industrial-dark mb-2">Documentation</h3>
+                    <p class="text-gray-600 text-sm">Complete traceability system.</p>
                 </div>
             </div>
             
             <!-- Quality Stats -->
-            <div class="bg-white rounded-xl p-8 shadow-lg">
-                <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div class="bg-gradient-to-r from-industrial-blue to-industrial-gray text-white rounded-lg p-6">
+                <div class="grid md:grid-cols-4 gap-6 text-center">
                     <div>
-                        <div class="text-3xl font-bold text-accent-orange mb-2">99.5%</div>
-                        <div class="text-gray-600">Quality Acceptance Rate</div>
+                        <div class="text-2xl font-bold text-accent-orange mb-1">99.5%</div>
+                        <div class="text-sm">Quality Acceptance Rate</div>
                     </div>
                     <div>
-                        <div class="text-3xl font-bold text-accent-orange mb-2">±0.005mm</div>
-                        <div class="text-gray-600">Precision Tolerance</div>
+                        <div class="text-2xl font-bold text-accent-orange mb-1">±0.005mm</div>
+                        <div class="text-sm">Precision Tolerance</div>
                     </div>
                     <div>
-                        <div class="text-3xl font-bold text-accent-orange mb-2">100%</div>
-                        <div class="text-gray-600">On-Time Delivery</div>
+                        <div class="text-2xl font-bold text-accent-orange mb-1">100%</div>
+                        <div class="text-sm">On-Time Delivery</div>
                     </div>
                     <div>
-                        <div class="text-3xl font-bold text-accent-orange mb-2">25+</div>
-                        <div class="text-gray-600">Years Experience</div>
+                        <div class="text-2xl font-bold text-accent-orange mb-1">25+</div>
+                        <div class="text-sm">Years Experience</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RFQ SECTION -->
-    <section id="rfq" class="py-20 bg-white">
+    <!-- RFQ SECTION - Compact -->
+    <section id="rfq" class="section-standard bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Request a Quote</h2>
-                <p class="text-xl text-gray-600">Get detailed quotes for your manufacturing requirements. Submit your specifications for comprehensive proposals.</p>
+                <p class="text-lg text-gray-600">Get detailed quotes for your manufacturing requirements. Submit your specifications for comprehensive proposals.</p>
             </div>
             
-            <form action="https://formspree.io/f/mvgqjbqy" method="POST" class="bg-gray-50 rounded-xl p-8 shadow-lg">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <form action="https://formspree.io/f/mvgqjbqy" method="POST" class="bg-white rounded-lg p-6 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
-                        <input type="text" name="company_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
+                        <input type="text" name="company_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Industry *</label>
-                        <select name="industry" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
+                        <select name="industry" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                             <option value="">Select Industry</option>
                             <option value="automotive">Automotive</option>
                             <option value="industrial">Industrial Equipment</option>
@@ -631,19 +1089,19 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Contact Person *</label>
-                        <input type="text" name="contact_person" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
+                        <input type="text" name="contact_person" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
+                        <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
+                        <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Manufacturing Process *</label>
-                        <select name="manufacturing_process" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
+                        <select name="manufacturing_process" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                             <option value="">Select Process</option>
                             <option value="cnc-machining">CNC Machining</option>
                             <option value="fabrication">Metal Fabrication</option>
@@ -654,32 +1112,32 @@
                     </div>
                 </div>
                 
-                <div class="mb-6">
+                <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-700 mb-2">Project Description *</label>
-                    <textarea name="project_description" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange" placeholder="Describe your manufacturing requirements, quantities, materials, tolerances, and delivery timeline..."></textarea>
+                    <textarea name="project_description" required rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange" placeholder="Describe your manufacturing requirements, quantities, materials, tolerances, and delivery timeline..."></textarea>
                 </div>
                 
-                <div class="mb-6">
+                <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-700 mb-2">Upload Files (Optional)</label>
-                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                        <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-4"></i>
-                        <p class="text-gray-600 mb-2">Drop files here or click to upload</p>
-                        <p class="text-sm text-gray-500">Supported: PDF, DWG, DXF, STEP, JPG, PNG (Max 10MB)</p>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                        <i class="fas fa-cloud-upload-alt text-2xl text-gray-400 mb-2"></i>
+                        <p class="text-gray-600 text-sm mb-1">Drop files here or click to upload</p>
+                        <p class="text-xs text-gray-500">Supported: PDF, DWG, DXF, STEP, JPG, PNG (Max 10MB)</p>
                         <input type="file" name="files" multiple accept=".pdf,.dwg,.dxf,.step,.jpg,.png" class="hidden">
                     </div>
                 </div>
                 
-                <div class="mb-6">
+                <div class="mb-4">
                     <label class="flex items-start">
                         <input type="checkbox" name="consent" required class="mt-1 rounded border-gray-300 text-accent-orange focus:ring-accent-orange">
-                        <span class="ml-3 text-sm text-gray-600">
+                        <span class="ml-2 text-sm text-gray-600">
                             I agree to Allied Industries processing my data for quote purposes and consent to being contacted regarding this inquiry.
                         </span>
                     </label>
                 </div>
                 
                 <div class="text-center">
-                    <button type="submit" class="bg-accent-orange text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-600 transition-colors">
+                    <button type="submit" class="bg-accent-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
                         <i class="fas fa-paper-plane mr-2"></i>
                         Submit RFQ
                     </button>
@@ -688,183 +1146,180 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <!-- Contact Section - Compact -->
+    <section id="contact" class="section-standard bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Contact Allied Industries</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ready to discuss your manufacturing needs? Get in touch with our team of experts.</p>
+                <p class="text-lg text-gray-600">Ready to discuss your manufacturing needs? Get in touch with our team of experts.</p>
             </div>
             
-            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+            <div class="grid lg:grid-cols-3 gap-8 mb-10">
                 <!-- Sales Team -->
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-handshake text-2xl text-white"></i>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center border">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4">Sales Team</h3>
-                    <p class="text-gray-600 mb-6">For quotes, project discussions, and business partnerships</p>
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3">Sales Team</h3>
+                    <p class="text-gray-600 mb-4 text-sm">For quotes, project discussions, and partnerships</p>
                     
-                    <div class="space-y-4 mb-6">
-                        <div class="flex items-center justify-center">
-                            <i class="fas fa-phone text-accent-orange mr-3"></i>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center justify-center text-sm">
+                            <i class="fas fa-phone text-accent-orange mr-2"></i>
                             <span class="font-medium">+91 8447223590</span>
                         </div>
-                        <div class="flex items-center justify-center">
-                            <i class="fas fa-envelope text-accent-orange mr-3"></i>
+                        <div class="flex items-center justify-center text-sm">
+                            <i class="fas fa-envelope text-accent-orange mr-2"></i>
                             <span class="font-medium">srivastavau58@gmail.com</span>
                         </div>
                     </div>
                     
-                    <p class="text-sm text-gray-500">Mon-Fri: 9:00 AM - 6:00 PM IST</p>
+                    <p class="text-xs text-gray-500">Mon-Fri: 9:00 AM - 6:00 PM IST</p>
                 </div>
                 
                 <!-- Engineering Support -->
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-cogs text-2xl text-white"></i>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center border">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cogs text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4">Engineering Support</h3>
-                    <p class="text-gray-600 mb-6">Technical consultations, design reviews, and manufacturing advice</p>
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3">Engineering Support</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Technical consultations and design reviews</p>
                     
-                    <div class="space-y-4 mb-6">
-                        <div class="flex items-center justify-center">
-                            <i class="fas fa-phone text-accent-orange mr-3"></i>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center justify-center text-sm">
+                            <i class="fas fa-phone text-accent-orange mr-2"></i>
                             <span class="font-medium">+91 8447223590</span>
                         </div>
-                        <div class="flex items-center justify-center">
-                            <i class="fas fa-envelope text-accent-orange mr-3"></i>
+                        <div class="flex items-center justify-center text-sm">
+                            <i class="fas fa-envelope text-accent-orange mr-2"></i>
                             <span class="font-medium">srivastavau58@gmail.com</span>
                         </div>
                     </div>
                     
-                    <p class="text-sm text-gray-500">Mon-Fri: 9:00 AM - 6:00 PM IST</p>
+                    <p class="text-xs text-gray-500">Mon-Fri: 9:00 AM - 6:00 PM IST</p>
                 </div>
                 
                 <!-- Location -->
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center border">
+                    <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-4">Visit Our Facility</h3>
-                    <p class="text-gray-600 mb-6">See our capabilities firsthand with a guided facility tour</p>
+                    <h3 class="text-lg font-bold text-industrial-dark mb-3">Visit Our Facility</h3>
+                    <p class="text-gray-600 mb-4 text-sm">See our capabilities firsthand</p>
                     
-                    <div class="space-y-4 mb-6">
-                        <div class="text-center">
-                            <p class="font-medium">A-13, PHASE-II, MAYAPURI INDUSTRIAL AREA</p>
-                            <p class="text-gray-600">Near Mayapuri Thana, New Delhi-110064, Delhi, India</p>
-                        </div>
+                    <div class="mb-4">
+                        <p class="font-medium text-sm">A-13, PHASE-II, MAYAPURI INDUSTRIAL AREA</p>
+                        <p class="text-gray-600 text-sm">Near Mayapuri Thana, New Delhi-110064, Delhi, India</p>
                     </div>
                     
-                    <button class="bg-accent-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                    <button class="bg-accent-orange text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors text-sm">
                         Book Plant Visit
                     </button>
                 </div>
             </div>
             
-            <!-- General Contact Form -->
-            <div class="mt-16">
-                <div class="text-center mb-12">
-                    <h3 class="text-2xl lg:text-3xl font-bold text-industrial-dark mb-4">Send Us a Message</h3>
-                    <p class="text-lg text-gray-600">Have a question or want to discuss your project? Get in touch with us.</p>
+            <!-- Contact Form -->
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-industrial-dark mb-3">Send Us a Message</h3>
+                    <p class="text-gray-600">Have a question or want to discuss your project? Get in touch with us.</p>
                 </div>
                 
-                <div class="max-w-2xl mx-auto">
-                    <form action="https://formspree.io/f/xzzvlaav" method="POST" class="bg-white rounded-xl shadow-lg p-8">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
-                                <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                                <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
-                            </div>
+                <form action="https://formspree.io/f/xzzvlaav" method="POST" class="bg-gray-50 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                            <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                         </div>
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                                <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                                <input type="text" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                            <select name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
-                                <option value="">Select Subject</option>
-                                <option value="general-inquiry">General Inquiry</option>
-                                <option value="technical-support">Technical Support</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                                <option value="quality-concerns">Quality Concerns</option>
-                                <option value="other">Other</option>
-                            </select>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                            <textarea name="message" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange" placeholder="Tell us about your inquiry..."></textarea>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                            <input type="text" name="company" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="bg-accent-orange text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
-                                <i class="fas fa-envelope mr-2"></i>
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                        <select name="subject" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange">
+                            <option value="">Select Subject</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="quality-concerns">Quality Concerns</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                        <textarea name="message" required rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange" placeholder="Tell us about your inquiry..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-accent-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Send Message
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-industrial-dark text-white py-16">
+    <!-- Footer - Compact -->
+    <footer class="bg-industrial-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-4 gap-6">
                 <div class="md:col-span-2">
-                    <div class="flex items-center mb-6">
+                    <div class="flex items-center mb-4">
                         <span class="text-xl font-bold">Allied Industries</span>
                     </div>
-                    <p class="text-gray-300 mb-6 max-w-md">
+                    <p class="text-gray-300 mb-4 max-w-md text-sm">
                         Precision manufacturing and engineering solutions since 1998. ISO 9001:2015 certified with a commitment to quality, innovation, and customer satisfaction.
                     </p>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
-                    <ul class="space-y-3 text-gray-300">
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
                         <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
                         <li><a href="#capabilities" class="hover:text-white transition-colors">Capabilities</a></li>
                         <li><a href="#industries" class="hover:text-white transition-colors">Industries</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition-colors">Gallery</a></li>
                         <li><a href="#quality" class="hover:text-white transition-colors">Quality</a></li>
                         <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
-                    <div class="space-y-3 text-gray-300">
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300 text-sm">
                         <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent-orange"></i>
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-accent-orange"></i>
                             <div>
                                 <p>A-13, PHASE-II, MAYAPURI INDUSTRIAL AREA</p>
                                 <p>Near Mayapuri Thana, New Delhi-110064, Delhi, India</p>
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-phone mr-3 text-accent-orange"></i>
+                            <i class="fas fa-phone mr-2 text-accent-orange"></i>
                             <span>+91 8447223590</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-envelope mr-3 text-accent-orange"></i>
+                            <i class="fas fa-envelope mr-2 text-accent-orange"></i>
                             <span>srivastavau58@gmail.com</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm">
                     © 2024 Allied Industries. All rights reserved.
                 </p>
@@ -903,9 +1358,31 @@
             });
         });
 
+        // Gallery tab functionality
+        const galleryTabs = document.querySelectorAll('.gallery-tab');
+        const galleryContents = document.querySelectorAll('.gallery-content');
+
+        galleryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                galleryTabs.forEach(t => t.classList.remove('active'));
+                galleryContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const targetTab = tab.getAttribute('data-tab');
+                const targetContent = document.getElementById(targetTab);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+
         // Forms will now submit directly to Formspree
         console.log('Forms configured for Formspree submission');
-        console.log('Allied Industries website loaded successfully!');
+        console.log('Allied Industries website with gallery loaded successfully!');
     </script>
 </body>
 </html>
