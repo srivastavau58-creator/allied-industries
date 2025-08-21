@@ -88,6 +88,9 @@
             border-radius: 0.75rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
         .gallery-image:hover {
@@ -98,6 +101,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 0.75rem;
         }
         
         .gallery-overlay {
@@ -114,6 +118,14 @@
         
         .gallery-image:hover .gallery-overlay {
             transform: translateY(0);
+        }
+
+        /* Product image styles */
+        .product-image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 0.5rem;
         }
 
         /* Optimized section spacing */
@@ -447,7 +459,7 @@
         </div>
     </section>
 
-    <!-- Products Section - Compact -->
+    <!-- Products Section - With Images -->
     <section id="products" class="section-compact bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -459,8 +471,7 @@
                 <!-- Machined Components -->
                 <div class="bg-white rounded-lg p-6 shadow-lg">
                     <div class="mb-4">
-                        <div class="w-full h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mb-3">
-                            <i class="fas fa-cog text-3xl text-gray-400"></i>
+                        <div class="w-full h-32 product-image mb-3" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop&crop=center');">
                         </div>
                         <h3 class="text-lg font-bold text-industrial-dark mb-2">Precision Machined Components</h3>
                         <p class="text-gray-600 text-sm">High-precision components with tight tolerances for critical applications.</p>
@@ -480,8 +491,7 @@
                 <!-- Fabricated Assemblies -->
                 <div class="bg-white rounded-lg p-6 shadow-lg">
                     <div class="mb-4">
-                        <div class="w-full h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-3">
-                            <i class="fas fa-cube text-3xl text-blue-400"></i>
+                        <div class="w-full h-32 product-image mb-3" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=300&fit=crop&crop=center');">
                         </div>
                         <h3 class="text-lg font-bold text-industrial-dark mb-2">Fabricated Assemblies</h3>
                         <p class="text-gray-600 text-sm">Complex welded and assembled structures for industrial applications.</p>
@@ -501,8 +511,7 @@
                 <!-- Tooling Solutions -->
                 <div class="bg-white rounded-lg p-6 shadow-lg">
                     <div class="mb-4">
-                        <div class="w-full h-32 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center mb-3">
-                            <i class="fas fa-wrench text-3xl text-orange-400"></i>
+                        <div class="w-full h-32 product-image mb-3" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop&crop=center');">
                         </div>
                         <h3 class="text-lg font-bold text-industrial-dark mb-2">Custom Tooling Solutions</h3>
                         <p class="text-gray-600 text-sm">Specialized jigs, fixtures, and production tooling.</p>
@@ -522,7 +531,7 @@
         </div>
     </section>
 
-    <!-- NEW GALLERY SECTION -->
+    <!-- NEW GALLERY SECTION WITH IMAGES -->
     <section id="gallery" class="section-standard bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -549,84 +558,42 @@
             <!-- Factory Facility Gallery -->
             <div id="factory" class="gallery-content active">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="gallery-image h-64 bg-gradient-to-br from-gray-200 to-gray-300">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-gray-600">
-                                <i class="fas fa-building text-4xl mb-2"></i>
-                                <p class="font-medium">Main Production Floor</p>
-                                <p class="text-sm">5000 sq ft manufacturing space</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Production Floor</h4>
                             <p class="text-sm">Our spacious 5000 sq ft production floor houses multiple manufacturing lines with climate-controlled environment.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-blue-200 to-blue-300">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-blue-700">
-                                <i class="fas fa-warehouse text-4xl mb-2"></i>
-                                <p class="font-medium">Raw Material Storage</p>
-                                <p class="text-sm">Organized inventory management</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Material Storage</h4>
                             <p class="text-sm">Climate-controlled storage facility with advanced inventory management system for raw materials.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-green-200 to-green-300">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-green-700">
-                                <i class="fas fa-hard-hat text-4xl mb-2"></i>
-                                <p class="font-medium">Safety Standards</p>
-                                <p class="text-sm">ISO compliant safety protocols</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d42e45da303?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Safety First</h4>
                             <p class="text-sm">Comprehensive safety protocols and training programs ensuring zero-accident workplace environment.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-purple-200 to-purple-300">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-purple-700">
-                                <i class="fas fa-users text-4xl mb-2"></i>
-                                <p class="font-medium">Team Workspace</p>
-                                <p class="text-sm">Collaborative work environment</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Team Excellence</h4>
                             <p class="text-sm">Modern workspace designed for collaboration, innovation, and continuous improvement initiatives.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-red-200 to-red-300">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-red-700">
-                                <i class="fas fa-shipping-fast text-4xl mb-2"></i>
-                                <p class="font-medium">Dispatch Center</p>
-                                <p class="text-sm">Efficient logistics & shipping</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1586528116493-a029325540fa?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Dispatch & Logistics</h4>
                             <p class="text-sm">Streamlined dispatch center ensuring timely delivery with proper packaging and quality checks.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-yellow-200 to-yellow-300">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-yellow-700">
-                                <i class="fas fa-solar-panel text-4xl mb-2"></i>
-                                <p class="font-medium">Sustainable Operations</p>
-                                <p class="text-sm">Green manufacturing practices</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Sustainability</h4>
                             <p class="text-sm">Solar-powered operations and waste management systems supporting environmental responsibility.</p>
@@ -638,84 +605,42 @@
             <!-- Manufacturing Equipment Gallery -->
             <div id="manufacturing" class="gallery-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="gallery-image h-64 bg-gradient-to-br from-gray-300 to-gray-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-gray-700">
-                                <i class="fas fa-cog text-4xl mb-2"></i>
-                                <p class="font-medium">5-Axis CNC Machine</p>
-                                <p class="text-sm">High precision machining</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1565621626354-8ccbe8834442?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">5-Axis CNC Center</h4>
                             <p class="text-sm">Advanced 5-axis CNC machining center capable of complex geometries with ±0.005mm tolerance.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-orange-300 to-red-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-red-700">
-                                <i class="fas fa-fire text-4xl mb-2"></i>
-                                <p class="font-medium">Welding Station</p>
-                                <p class="text-sm">TIG, MIG & Arc welding</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Advanced Welding</h4>
                             <p class="text-sm">Multi-process welding station with automated controls for consistent, high-quality welds.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-blue-300 to-indigo-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-indigo-700">
-                                <i class="fas fa-cut text-4xl mb-2"></i>
-                                <p class="font-medium">Laser Cutting</p>
-                                <p class="text-sm">Precision cutting technology</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Laser Cutting System</h4>
                             <p class="text-sm">High-power laser cutting system for precise material processing up to 25mm thickness.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-green-300 to-teal-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-teal-700">
-                                <i class="fas fa-hammer text-4xl mb-2"></i>
-                                <p class="font-medium">Forming Press</p>
-                                <p class="text-sm">Metal forming & bending</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Hydraulic Press</h4>
                             <p class="text-sm">High-tonnage hydraulic press for metal forming, bending, and shaping operations.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-purple-300 to-pink-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-pink-700">
-                                <i class="fas fa-tools text-4xl mb-2"></i>
-                                <p class="font-medium">Assembly Line</p>
-                                <p class="text-sm">Automated assembly systems</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Assembly Systems</h4>
                             <p class="text-sm">Automated assembly line with robotic assistance for consistent, efficient production.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-yellow-300 to-orange-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-orange-700">
-                                <i class="fas fa-paint-brush text-4xl mb-2"></i>
-                                <p class="font-medium">Finishing Booth</p>
-                                <p class="text-sm">Surface treatment & coating</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Finishing Operations</h4>
                             <p class="text-sm">Dedicated finishing booth for powder coating, painting, and surface treatment processes.</p>
@@ -727,104 +652,56 @@
             <!-- Products & Components Gallery -->
             <div id="products" class="gallery-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="gallery-image h-48 bg-gradient-to-br from-gray-200 to-gray-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-gray-700">
-                                <i class="fas fa-cog text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Precision Gears</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Automotive Gears</h4>
                             <p class="text-sm">High-precision transmission gears with superior surface finish and tight tolerances.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48 bg-gradient-to-br from-blue-200 to-blue-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-blue-700">
-                                <i class="fas fa-cube text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Engine Blocks</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Engine Components</h4>
                             <p class="text-sm">Precision-machined engine blocks and cylinder heads for automotive applications.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48 bg-gradient-to-br from-green-200 to-green-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-green-700">
-                                <i class="fas fa-bolt text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Turbine Parts</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1565621626354-8ccbe8834442?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Power Generation</h4>
                             <p class="text-sm">Critical turbine components for renewable energy and power generation systems.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48 bg-gradient-to-br from-orange-200 to-orange-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-orange-700">
-                                <i class="fas fa-wrench text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Custom Fixtures</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Manufacturing Aids</h4>
                             <p class="text-sm">Custom-designed jigs and fixtures for enhanced production efficiency and quality.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48 bg-gradient-to-br from-purple-200 to-purple-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-purple-700">
-                                <i class="fas fa-plane text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Aerospace Parts</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d42e45da303?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Aerospace Components</h4>
                             <p class="text-sm">High-strength aerospace components meeting stringent quality and safety standards.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48 bg-gradient-to-br from-red-200 to-red-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-red-700">
-                                <i class="fas fa-industry text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Industrial Parts</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Heavy Machinery</h4>
                             <p class="text-sm">Robust industrial components for heavy machinery and material handling equipment.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48 bg-gradient-to-br from-teal-200 to-teal-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-teal-700">
-                                <i class="fas fa-layer-group text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Sheet Metal</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Fabricated Assemblies</h4>
                             <p class="text-sm">Complex sheet metal fabrications with precision forming and welding.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48 bg-gradient-to-br from-pink-200 to-pink-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-pink-700">
-                                <i class="fas fa-gem text-3xl mb-2"></i>
-                                <p class="font-medium text-sm">Precision Tools</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&h=300&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Cutting Tools</h4>
                             <p class="text-sm">High-precision cutting tools and dies for various manufacturing applications.</p>
@@ -836,84 +713,42 @@
             <!-- Quality Control Gallery -->
             <div id="quality" class="gallery-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="gallery-image h-64 bg-gradient-to-br from-blue-200 to-blue-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-blue-700">
-                                <i class="fas fa-search text-4xl mb-2"></i>
-                                <p class="font-medium">CMM Inspection</p>
-                                <p class="text-sm">Coordinate measuring machine</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">CMM Laboratory</h4>
                             <p class="text-sm">State-of-the-art coordinate measuring machine for precise dimensional inspection and verification.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-green-200 to-green-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-green-700">
-                                <i class="fas fa-microscope text-4xl mb-2"></i>
-                                <p class="font-medium">Material Testing</p>
-                                <p class="text-sm">Metallurgical analysis</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d42e45da303?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Material Laboratory</h4>
                             <p class="text-sm">Advanced material testing and metallurgical analysis for quality assurance and certification.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-orange-200 to-orange-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-orange-700">
-                                <i class="fas fa-chart-line text-4xl mb-2"></i>
-                                <p class="font-medium">SPC Monitoring</p>
-                                <p class="text-sm">Statistical process control</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Process Control</h4>
                             <p class="text-sm">Real-time statistical process control monitoring for consistent quality and continuous improvement.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-purple-200 to-purple-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-purple-700">
-                                <i class="fas fa-certificate text-4xl mb-2"></i>
-                                <p class="font-medium">ISO Compliance</p>
-                                <p class="text-sm">Quality management system</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1586528116493-a029325540fa?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">ISO Certification</h4>
                             <p class="text-sm">ISO 9001:2015 certified quality management system ensuring consistent excellence.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-red-200 to-red-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-red-700">
-                                <i class="fas fa-clipboard-check text-4xl mb-2"></i>
-                                <p class="font-medium">Final Inspection</p>
-                                <p class="text-sm">100% quality verification</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1565621626354-8ccbe8834442?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Final QC Station</h4>
                             <p class="text-sm">Comprehensive final inspection station ensuring 100% quality verification before dispatch.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64 bg-gradient-to-br from-teal-200 to-teal-400">
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-teal-700">
-                                <i class="fas fa-file-alt text-4xl mb-2"></i>
-                                <p class="font-medium">Documentation</p>
-                                <p class="text-sm">Complete traceability</p>
-                            </div>
-                        </div>
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Quality Records</h4>
                             <p class="text-sm">Comprehensive documentation and traceability system for complete quality assurance.</p>
@@ -1382,7 +1217,7 @@
 
         // Forms will now submit directly to Formspree
         console.log('Forms configured for Formspree submission');
-        console.log('Allied Industries website with gallery loaded successfully!');
+        console.log('Allied Industries website with gallery and images loaded successfully!');
     </script>
 </body>
 </html>
