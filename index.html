@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allied Industries - Precision Manufacturing & Engineering Excellence</title>
-    <meta name="description" content="Allied Industries delivers ISO-certified precision machining, fabrication, and engineering solutions since 1998. Serving automotive, energy, industrial, and aerospace sectors across India.">
-    <meta name="keywords" content="precision machining, CNC manufacturing, metal fabrication, engineering solutions, automotive parts, industrial equipment, aerospace components">
+    <meta name="description" content="Allied Industries delivers ISO-certified precision machining, fabrication, and engineering solutions since 1998. Serving automotive, energy, and industrial sectors across India.">
+    <meta name="keywords" content="precision machining, CNC manufacturing, metal fabrication, engineering solutions, automotive parts, industrial equipment">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Allied Industries - Precision Manufacturing Excellence">
     <meta property="og:description" content="ISO-certified precision machining and fabrication solutions since 1998">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alliedindustries.example.com">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -46,118 +45,7 @@
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.9) 50%, rgba(249, 115, 22, 0.9) 100%),
-                        url('https://picsum.photos/1920/1080?random=100') center/cover;
-            position: relative;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(37, 99, 235, 0.7) 50%, rgba(249, 115, 22, 0.8) 100%);
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-        
-        .hero-images {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .hero-image {
-            position: absolute;
-            border-radius: 1rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        .hero-image-1 {
-            top: 15%;
-            right: 8%;
-            width: 200px;
-            height: 150px;
-            animation: float 6s ease-in-out infinite;
-            background-image: url('https://picsum.photos/400/300?random=101');
-        }
-        
-        .hero-image-2 {
-            top: 60%;
-            right: 15%;
-            width: 160px;
-            height: 120px;
-            animation: float 6s ease-in-out infinite 2s;
-            background-image: url('https://picsum.photos/320/240?random=102');
-        }
-        
-        .hero-image-3 {
-            top: 25%;
-            left: 10%;
-            width: 180px;
-            height: 135px;
-            animation: float 6s ease-in-out infinite 4s;
-            background-image: url('https://picsum.photos/360/270?random=103');
-        }
-        
-        .hero-image-4 {
-            bottom: 20%;
-            left: 8%;
-            width: 140px;
-            height: 105px;
-            animation: float 6s ease-in-out infinite 1s;
-            background-image: url('https://picsum.photos/280/210?random=104');
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(1deg); }
-            50% { transform: translateY(-20px) rotate(0deg); }
-            75% { transform: translateY(-10px) rotate(-1deg); }
-        }
-        
-        .manufacturing-icons {
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            z-index: 5;
-        }
-        
-        .manufacturing-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            animation: pulse 2s infinite;
-        }
-        
-        .manufacturing-icon:nth-child(2) { animation-delay: 0.5s; }
-        .manufacturing-icon:nth-child(3) { animation-delay: 1s; }
-        .manufacturing-icon:nth-child(4) { animation-delay: 1.5s; }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
+            background: linear-gradient(135deg, var(--industrial-blue) 0%, #2563eb 50%, var(--accent-orange) 100%);
         }
         
         .nav-blur {
@@ -458,18 +346,6 @@
                 padding: 0.5rem 1rem;
             }
             
-            .hero-images {
-                display: none;
-            }
-            
-            .manufacturing-icons {
-                display: none !important;
-            }
-            
-            .hero-gradient {
-                background: linear-gradient(135deg, var(--industrial-blue) 0%, #2563eb 50%, var(--accent-orange) 100%);
-            }
-            
             .logo-text {
                 font-size: 1.5rem;
             }
@@ -489,15 +365,6 @@
                 min-height: auto;
                 padding: 1rem;
             }
-        }
-        
-        @media (max-width: 1024px) {
-            .hero-image-1 { width: 160px; height: 120px; right: 5%; }
-            .hero-image-2 { width: 120px; height: 90px; right: 10%; }
-            .hero-image-3 { width: 140px; height: 105px; left: 5%; }
-            .hero-image-4 { width: 100px; height: 75px; left: 5%; }
-            
-            .manufacturing-icons { right: 2%; }
         }
     </style>
 </head>
@@ -527,8 +394,6 @@
                         <a href="#industries" class="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors">Industries</a>
                         <a href="#products" class="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors">Products</a>
                         <a href="#gallery" class="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
-                        <a href="#quality" class="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors">Quality</a>
-                        <a href="#rfq" class="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors">RFQ</a>
                         <a href="#contact" class="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
                     </div>
                 </div>
@@ -550,44 +415,15 @@
                 <a href="#industries" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600">Industries</a>
                 <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600">Products</a>
                 <a href="#gallery" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600">Gallery</a>
-                <a href="#quality" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600">Quality</a>
-                <a href="#rfq" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600">RFQ</a>
                 <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Simplified (NO FLOATING ICONS) -->
     <section id="home" class="hero-gradient text-white min-h-screen flex items-center relative overflow-hidden scroll-offset">
-        <!-- Hero Background Images -->
-        <div class="hero-images">
-            <div class="hero-image hero-image-1"></div>
-            <div class="hero-image hero-image-2"></div>
-            <div class="hero-image hero-image-3"></div>
-            <div class="hero-image hero-image-4"></div>
-        </div>
-        
-        <!-- Manufacturing Icons -->
-        <div class="manufacturing-icons hidden lg:flex">
-            <div class="manufacturing-icon">
-                <i class="fas fa-cogs"></i>
-            </div>
-            <div class="manufacturing-icon">
-                <i class="fas fa-industry"></i>
-            </div>
-            <div class="manufacturing-icon">
-                <i class="fas fa-hammer"></i>
-            </div>
-            <div class="manufacturing-icon">
-                <i class="fas fa-wrench"></i>
-            </div>
-        </div>
-        
-        <!-- Hero Overlay -->
-        <div class="hero-overlay"></div>
-        
         <!-- Hero Content -->
-        <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="fade-in">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                     Precision Manufacturing<br>
@@ -596,10 +432,10 @@
                 <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-blue-100">
                     Since 1998, Allied Industries delivers ISO-certified precision machining, fabrication, and engineering solutions to automotive, industrial, and energy sectors across India.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="btn-primary inline-flex items-center" onclick="document.getElementById('rfq').scrollIntoView({behavior: 'smooth'})">
-                        <i class="fas fa-file-alt mr-2"></i>
-                        Request Quote
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button class="btn-primary inline-flex items-center" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-phone mr-2"></i>
+                        Get Quote
                     </button>
                     <button class="btn-secondary inline-flex items-center" onclick="document.getElementById('capabilities').scrollIntoView({behavior: 'smooth'})">
                         <i class="fas fa-cogs mr-2"></i>
@@ -608,7 +444,7 @@
                 </div>
                 
                 <!-- Hero Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                     <div class="stat-card">
                         <div class="text-2xl md:text-3xl font-bold text-orange-300">25+</div>
                         <div class="text-sm text-blue-100">Years Experience</div>
@@ -630,40 +466,27 @@
         </div>
     </section>
 
-    <!-- About Section - Compact -->
+    <!-- About Section - Streamlined -->
     <section id="about" class="section-compact bg-gray-50 scroll-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">About Allied Industries</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Leading the way in precision manufacturing with over 25 years of engineering excellence and innovation.</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Leading precision manufacturing company with over 25 years of engineering excellence.</p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
+                <div>
                     <div class="card-standard">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-industry text-xl text-white"></i>
+                                <i class="fas fa-target text-xl text-white"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-industrial-dark">Our Mission</h3>
                                 <p class="text-blue-600 font-medium">Excellence in Manufacturing</p>
                             </div>
                         </div>
-                        <p class="text-gray-700 flex-grow">To deliver precision-engineered solutions that exceed customer expectations through innovative manufacturing processes, quality craftsmanship, and reliable partnerships.</p>
-                    </div>
-                    
-                    <div class="card-standard">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-eye text-xl text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-industrial-dark">Our Vision</h3>
-                                <p class="text-orange-600 font-medium">Future of Manufacturing</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 flex-grow">To be India's leading precision manufacturing partner, recognized for technological innovation, sustainable practices, and exceptional customer service.</p>
+                        <p class="text-gray-700 flex-grow">To deliver precision-engineered solutions that exceed customer expectations through innovative manufacturing processes and reliable partnerships.</p>
                     </div>
                 </div>
                 
@@ -689,12 +512,12 @@
         </div>
     </section>
 
-    <!-- Capabilities Section - Compact -->
+    <!-- Capabilities Section -->
     <section id="capabilities" class="section-compact bg-white scroll-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Manufacturing Capabilities</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Advanced manufacturing technologies and processes for precision engineering solutions.</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Advanced manufacturing technologies for precision engineering solutions.</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -704,7 +527,7 @@
                         <i class="fas fa-cogs text-xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-industrial-dark mb-3">CNC Machining</h3>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">5-axis CNC machining centers with ±0.005mm tolerance capability for complex geometries and precision components.</p>
+                    <p class="text-gray-700 mb-4 text-sm flex-grow">5-axis CNC machining centers with ±0.005mm tolerance capability for complex geometries.</p>
                     <ul class="text-sm text-gray-600 space-y-1">
                         <li><i class="fas fa-check text-green-500 mr-2"></i>Multi-axis capabilities</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i>High-speed machining</li>
@@ -718,7 +541,7 @@
                         <i class="fas fa-hammer text-xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-industrial-dark mb-3">Metal Fabrication</h3>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">Comprehensive sheet metal fabrication including cutting, forming, welding, and finishing operations.</p>
+                    <p class="text-gray-700 mb-4 text-sm flex-grow">Comprehensive sheet metal fabrication including cutting, forming, and welding.</p>
                     <ul class="text-sm text-gray-600 space-y-1">
                         <li><i class="fas fa-check text-green-500 mr-2"></i>Laser cutting</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i>Precision welding</li>
@@ -726,81 +549,39 @@
                     </ul>
                 </div>
                 
-                <!-- Assembly Services -->
+                <!-- Quality Control -->
                 <div class="card-gradient bg-gradient-to-br from-green-50 to-green-100">
                     <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-puzzle-piece text-xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-3">Assembly Services</h3>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">Complete mechanical assembly services with quality testing and validation for ready-to-use products.</p>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Mechanical assembly</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Quality testing</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Packaging solutions</li>
-                    </ul>
-                </div>
-                
-                <!-- Tool & Die -->
-                <div class="card-gradient bg-gradient-to-br from-purple-50 to-purple-100">
-                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-wrench text-xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-3">Tool & Die Making</h3>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">Custom tool and die manufacturing for production efficiency and consistent quality in mass production.</p>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Progressive dies</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Injection molds</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Precision fixtures</li>
-                    </ul>
-                </div>
-                
-                <!-- Quality Control -->
-                <div class="card-gradient bg-gradient-to-br from-red-50 to-red-100">
-                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-search text-xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-industrial-dark mb-3">Quality Control</h3>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">Advanced inspection and testing capabilities ensuring 100% quality compliance with international standards.</p>
+                    <p class="text-gray-700 mb-4 text-sm flex-grow">Advanced inspection ensuring 100% quality compliance with international standards.</p>
                     <ul class="text-sm text-gray-600 space-y-1">
                         <li><i class="fas fa-check text-green-500 mr-2"></i>CMM inspection</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i>Material testing</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i>Process validation</li>
                     </ul>
                 </div>
-                
-                <!-- Engineering Services -->
-                <div class="card-gradient bg-gradient-to-br from-indigo-50 to-indigo-100">
-                    <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-drafting-compass text-xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-industrial-dark mb-3">Engineering Services</h3>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">Complete engineering support from design optimization to manufacturing process development and validation.</p>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>CAD/CAM services</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Process engineering</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Design optimization</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries Section - Compact -->
+    <!-- Industries Section - Reduced to 3 -->
     <section id="industries" class="section-compact bg-gray-50 scroll-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Industries We Serve</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Delivering specialized manufacturing solutions across diverse industrial sectors.</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Delivering specialized manufacturing solutions across key industrial sectors.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Automotive -->
                 <div class="card-standard text-center">
                     <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-car text-2xl text-white"></i>
                     </div>
                     <h3 class="text-lg font-bold text-industrial-dark mb-3">Automotive</h3>
-                    <p class="text-gray-600 text-sm mb-4 flex-grow">Precision components for engines, transmissions, and chassis systems meeting automotive quality standards.</p>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Precision components for engines, transmissions, and chassis systems.</p>
                     <div class="text-sm text-gray-500">
                         <div class="mb-1">• Engine components</div>
                         <div class="mb-1">• Transmission parts</div>
@@ -814,7 +595,7 @@
                         <i class="fas fa-bolt text-2xl text-white"></i>
                     </div>
                     <h3 class="text-lg font-bold text-industrial-dark mb-3">Energy & Power</h3>
-                    <p class="text-gray-600 text-sm mb-4 flex-grow">Critical components for power generation, renewable energy systems, and electrical equipment.</p>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Critical components for power generation and renewable energy systems.</p>
                     <div class="text-sm text-gray-500">
                         <div class="mb-1">• Turbine components</div>
                         <div class="mb-1">• Generator parts</div>
@@ -828,46 +609,40 @@
                         <i class="fas fa-industry text-2xl text-white"></i>
                     </div>
                     <h3 class="text-lg font-bold text-industrial-dark mb-3">Industrial Equipment</h3>
-                    <p class="text-gray-600 text-sm mb-4 flex-grow">Heavy-duty components for manufacturing machinery, material handling, and processing equipment.</p>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Heavy-duty components for manufacturing machinery and processing equipment.</p>
                     <div class="text-sm text-gray-500">
                         <div class="mb-1">• Manufacturing machinery</div>
                         <div class="mb-1">• Material handling</div>
                         <div>• Process equipment</div>
                     </div>
                 </div>
-                
-
             </div>
         </div>
     </section>
 
-    <!-- Products Section with Enhanced Images -->
+    <!-- Products Section - Streamlined -->
     <section id="products" class="section-compact bg-white scroll-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Product Portfolio</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive range of precision-engineered products for diverse industrial applications.</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Precision-engineered products for diverse industrial applications.</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Precision Gears -->
                 <div class="card-standard overflow-hidden p-0">
-                    <div class="product-image" style="background-image: url('https://picsum.photos/400/200?random=1');">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=200&fit=crop&crop=center');">
                         <div class="product-overlay">
                             <div class="text-center">
-                                <h4 class="text-xl font-bold mb-2">View Details</h4>
-                                <p class="text-sm">Learn more about precision gears</p>
+                                <h4 class="text-xl font-bold mb-2">Precision Gears</h4>
+                                <p class="text-sm">High precision manufacturing</p>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-bold text-industrial-dark mb-3">Precision Gears</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow">High-precision spur, helical, and bevel gears manufactured to exact specifications with superior surface finish.</p>
+                        <p class="text-gray-600 mb-4 text-sm flex-grow">High-precision spur, helical, and bevel gears with superior surface finish.</p>
                         <div class="space-y-2 text-sm text-gray-700">
-                            <div class="flex justify-between">
-                                <span class="font-medium">Material:</span>
-                                <span>Alloy Steel, Stainless Steel</span>
-                            </div>
                             <div class="flex justify-between">
                                 <span class="font-medium">Tolerance:</span>
                                 <span>±0.005mm</span>
@@ -882,25 +657,21 @@
                 
                 <!-- Hydraulic Components -->
                 <div class="card-standard overflow-hidden p-0">
-                    <div class="product-image" style="background-image: url('https://picsum.photos/400/200?random=2');">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=200&fit=crop&crop=center');">
                         <div class="product-overlay">
                             <div class="text-center">
-                                <h4 class="text-xl font-bold mb-2">View Details</h4>
-                                <p class="text-sm">Explore hydraulic solutions</p>
+                                <h4 class="text-xl font-bold mb-2">Hydraulic Systems</h4>
+                                <p class="text-sm">Industrial solutions</p>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-bold text-industrial-dark mb-3">Hydraulic Components</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow">Custom hydraulic cylinders, valves, and fittings designed for high-pressure applications and reliability.</p>
+                        <p class="text-gray-600 mb-4 text-sm flex-grow">Custom hydraulic cylinders and valves for high-pressure applications.</p>
                         <div class="space-y-2 text-sm text-gray-700">
                             <div class="flex justify-between">
                                 <span class="font-medium">Pressure Rating:</span>
                                 <span>Up to 350 bar</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Certification:</span>
-                                <span>ISO 9001</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="font-medium">Applications:</span>
@@ -910,87 +681,23 @@
                     </div>
                 </div>
                 
-                <!-- Machined Castings -->
-                <div class="card-standard overflow-hidden p-0">
-                    <div class="product-image" style="background-image: url('https://picsum.photos/400/200?random=3');">
-                        <div class="product-overlay">
-                            <div class="text-center">
-                                <h4 class="text-xl font-bold mb-2">View Details</h4>
-                                <p class="text-sm">Discover casting solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-industrial-dark mb-3">Machined Castings</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow">Precision-machined cast iron and aluminum components with complex geometries and tight tolerances.</p>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <div class="flex justify-between">
-                                <span class="font-medium">Material:</span>
-                                <span>Cast Iron, Aluminum</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Weight Range:</span>
-                                <span>0.5kg - 500kg</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Applications:</span>
-                                <span>Automotive, Industrial</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Fabricated Assemblies -->
-                <div class="card-standard overflow-hidden p-0">
-                    <div class="product-image" style="background-image: url('https://picsum.photos/400/200?random=4');">
-                        <div class="product-overlay">
-                            <div class="text-center">
-                                <h4 class="text-xl font-bold mb-2">View Details</h4>
-                                <p class="text-sm">View assembly capabilities</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-industrial-dark mb-3">Fabricated Assemblies</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow">Complex welded and bolted assemblies ready for installation with complete testing and validation.</p>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <div class="flex justify-between">
-                                <span class="font-medium">Welding:</span>
-                                <span>TIG, MIG, Arc</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Testing:</span>
-                                <span>NDT, Pressure Test</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Finishing:</span>
-                                <span>Painting, Coating</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
                 <!-- CNC Machined Parts -->
                 <div class="card-standard overflow-hidden p-0">
-                    <div class="product-image" style="background-image: url('https://picsum.photos/400/200?random=5');">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1565621626354-8ccbe8834442?w=400&h=200&fit=crop&crop=center');">
                         <div class="product-overlay">
                             <div class="text-center">
-                                <h4 class="text-xl font-bold mb-2">View Details</h4>
-                                <p class="text-sm">Precision machining details</p>
+                                <h4 class="text-xl font-bold mb-2">CNC Parts</h4>
+                                <p class="text-sm">Precision machining</p>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h3 class="text-xl font-bold text-industrial-dark mb-3">CNC Machined Parts</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow">High-precision CNC machined components from prototype to production volumes with consistent quality.</p>
+                        <p class="text-gray-600 mb-4 text-sm flex-grow">High-precision components from prototype to production volumes.</p>
                         <div class="space-y-2 text-sm text-gray-700">
                             <div class="flex justify-between">
                                 <span class="font-medium">Tolerance:</span>
                                 <span>±0.002mm</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Surface Finish:</span>
-                                <span>Ra 0.8 - 3.2</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="font-medium">Volume:</span>
@@ -999,46 +706,16 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Custom Tooling -->
-                <div class="card-standard overflow-hidden p-0">
-                    <div class="product-image" style="background-image: url('https://picsum.photos/400/200?random=6');">
-                        <div class="product-overlay">
-                            <div class="text-center">
-                                <h4 class="text-xl font-bold mb-2">View Details</h4>
-                                <p class="text-sm">Custom tooling solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-industrial-dark mb-3">Custom Tooling</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow">Specialized tools, jigs, and fixtures designed to optimize manufacturing processes and ensure consistency.</p>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <div class="flex justify-between">
-                                <span class="font-medium">Design:</span>
-                                <span>CAD/CAM Optimized</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Material:</span>
-                                <span>Tool Steel, Carbide</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Applications:</span>
-                                <span>Production Tooling</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section with Improved Images -->
+    <!-- Gallery Section with Fixed Images -->
     <section id="gallery" class="section-standard bg-white scroll-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Our Facilities & Products Gallery</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore our state-of-the-art manufacturing facilities, advanced equipment, and precision-crafted products.</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Manufacturing Gallery</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore our facilities, equipment, and precision-crafted products.</p>
             </div>
             
             <!-- Gallery Tabs -->
@@ -1060,45 +737,24 @@
             <!-- Factory Facility Gallery -->
             <div id="factory" class="gallery-content active">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=10');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Production Floor</h4>
-                            <p class="text-sm">Our spacious 5000 sq ft production floor houses multiple manufacturing lines with climate-controlled environment.</p>
+                            <p class="text-sm">Our spacious production floor with climate-controlled environment.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=11');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Material Storage</h4>
-                            <p class="text-sm">Climate-controlled storage facility with advanced inventory management system for raw materials.</p>
+                            <p class="text-sm">Advanced inventory management system for raw materials.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=12');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d42e45da303?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
-                            <h4 class="font-bold">Safety First</h4>
-                            <p class="text-sm">Comprehensive safety protocols and training programs ensuring zero-accident workplace environment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=13');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Team Excellence</h4>
-                            <p class="text-sm">Modern workspace designed for collaboration, innovation, and continuous improvement initiatives.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=14');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Dispatch & Logistics</h4>
-                            <p class="text-sm">Streamlined dispatch center ensuring timely delivery with proper packaging and quality checks.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=15');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Sustainability</h4>
-                            <p class="text-sm">Solar-powered operations and waste management systems supporting environmental responsibility.</p>
+                            <h4 class="font-bold">Safety Operations</h4>
+                            <p class="text-sm">Comprehensive safety protocols ensuring zero-accident workplace.</p>
                         </div>
                     </div>
                 </div>
@@ -1107,106 +763,57 @@
             <!-- Manufacturing Equipment Gallery -->
             <div id="manufacturing" class="gallery-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=20');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1565621626354-8ccbe8834442?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">5-Axis CNC Center</h4>
-                            <p class="text-sm">Advanced 5-axis CNC machining center capable of complex geometries with ±0.005mm tolerance.</p>
+                            <p class="text-sm">Advanced CNC machining with ±0.005mm tolerance capability.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=21');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Advanced Welding</h4>
-                            <p class="text-sm">Multi-process welding station with automated controls for consistent, high-quality welds.</p>
+                            <p class="text-sm">Multi-process welding with automated controls for consistent quality.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=22');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Laser Cutting System</h4>
-                            <p class="text-sm">High-power laser cutting system for precise material processing up to 25mm thickness.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=23');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Hydraulic Press</h4>
-                            <p class="text-sm">High-tonnage hydraulic press for metal forming, bending, and shaping operations.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=24');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Assembly Systems</h4>
-                            <p class="text-sm">Automated assembly line with robotic assistance for consistent, efficient production.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=25');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Finishing Operations</h4>
-                            <p class="text-sm">Dedicated finishing booth for powder coating, painting, and surface treatment processes.</p>
+                            <p class="text-sm">High-power laser cutting for precise material processing.</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Products & Components Gallery -->
+            <!-- Products & Components Gallery - FIXED -->
             <div id="products" class="gallery-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop&crop=center'); background-color: #f3f4f6;">
                         <div class="gallery-overlay">
-                            <h4 class="font-bold">Automotive Gears</h4>
-                            <p class="text-sm">High-precision transmission gears with superior surface finish and tight tolerances.</p>
+                            <h4 class="font-bold">Precision Gears</h4>
+                            <p class="text-sm">High-precision transmission gears with superior surface finish.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=300&fit=crop&crop=center'); background-color: #f3f4f6;">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Engine Components</h4>
-                            <p class="text-sm">Precision-machined engine blocks and cylinder heads for automotive applications.</p>
+                            <p class="text-sm">Precision-machined engine blocks for automotive applications.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1565621626354-8ccbe8834442?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1565621626354-8ccbe8834442?w=400&h=300&fit=crop&crop=center'); background-color: #f3f4f6;">
                         <div class="gallery-overlay">
-                            <h4 class="font-bold">Power Generation</h4>
-                            <p class="text-sm">Critical turbine components for renewable energy and power generation systems.</p>
+                            <h4 class="font-bold">Industrial Parts</h4>
+                            <p class="text-sm">Heavy-duty components for manufacturing equipment.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
+                    <div class="gallery-image h-48" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop&crop=center'); background-color: #f3f4f6;">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">Manufacturing Aids</h4>
-                            <p class="text-sm">Custom-designed jigs and fixtures for enhanced production efficiency and quality.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1581093458791-9d42e45da303?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Industrial Components</h4>
-                            <p class="text-sm">Robust industrial components for heavy-duty applications and manufacturing equipment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Heavy Machinery</h4>
-                            <p class="text-sm">Robust industrial components for heavy machinery and material handling equipment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Fabricated Assemblies</h4>
-                            <p class="text-sm">Complex sheet metal fabrications with precision forming and welding.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-48" style="background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%), linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f3f4f6 75%), linear-gradient(-45deg, transparent 75%, #f3f4f6 75%), url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop&crop=center'); background-color: #e5e7eb;">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Cutting Tools</h4>
-                            <p class="text-sm">High-precision cutting tools and dies for various manufacturing applications.</p>
+                            <p class="text-sm">Custom jigs and fixtures for enhanced production efficiency.</p>
                         </div>
                     </div>
                 </div>
@@ -1215,45 +822,24 @@
             <!-- Quality Control Gallery -->
             <div id="quality-gallery" class="gallery-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=40');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
                             <h4 class="font-bold">CMM Laboratory</h4>
-                            <p class="text-sm">State-of-the-art coordinate measuring machine for precise dimensional inspection and verification.</p>
+                            <p class="text-sm">State-of-the-art coordinate measuring machine for precise inspection.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=41');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d42e45da303?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
-                            <h4 class="font-bold">Material Laboratory</h4>
-                            <p class="text-sm">Advanced material testing and metallurgical analysis for quality assurance and certification.</p>
+                            <h4 class="font-bold">Material Testing</h4>
+                            <p class="text-sm">Advanced material testing and metallurgical analysis.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=42');">
+                    <div class="gallery-image h-64" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop&crop=center');">
                         <div class="gallery-overlay">
-                            <h4 class="font-bold">Process Control</h4>
-                            <p class="text-sm">Real-time statistical process control monitoring for consistent quality and continuous improvement.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=43');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">ISO Certification</h4>
-                            <p class="text-sm">ISO 9001:2015 certified quality management system ensuring consistent excellence.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=44');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Final QC Station</h4>
-                            <p class="text-sm">Comprehensive final inspection station ensuring 100% quality verification before dispatch.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-image h-64" style="background-image: url('https://picsum.photos/600/400?random=45');">
-                        <div class="gallery-overlay">
-                            <h4 class="font-bold">Quality Records</h4>
-                            <p class="text-sm">Comprehensive documentation and traceability system for complete quality assurance.</p>
+                            <h4 class="font-bold">Quality Documentation</h4>
+                            <p class="text-sm">Comprehensive documentation and traceability system.</p>
                         </div>
                     </div>
                 </div>
@@ -1261,331 +847,48 @@
         </div>
     </section>
 
-    <!-- Case Studies Section - Compact -->
-    <section id="case-studies" class="section-compact bg-gray-50 scroll-offset">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Success Stories</h2>
-                <p class="text-lg text-gray-600">Real results from our manufacturing partnerships and precision engineering projects.</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Case Study 1 -->
-                <div class="card-gradient bg-gradient-to-br from-blue-50 to-blue-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-car text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-industrial-dark">Automotive Transmission</h3>
-                            <p class="text-blue-600 font-medium text-sm">Leading Auto OEM</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">Developed and manufactured precision transmission gears for next-generation automotive platform, achieving 40% weight reduction while maintaining strength requirements.</p>
-                    <div class="grid grid-cols-3 gap-3 text-center">
-                        <div>
-                            <div class="text-lg font-bold text-blue-600">40%</div>
-                            <div class="text-xs text-gray-600">Weight Reduction</div>
-                        </div>
-                        <div>
-                            <div class="text-lg font-bold text-blue-600">6 Months</div>
-                            <div class="text-xs text-gray-600">Development</div>
-                        </div>
-                        <div>
-                            <div class="text-lg font-bold text-blue-600">10,000+</div>
-                            <div class="text-xs text-gray-600">Units Delivered</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Case Study 2 -->
-                <div class="card-gradient bg-gradient-to-br from-green-50 to-green-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-bolt text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-industrial-dark">Power Generation</h3>
-                            <p class="text-green-600 font-medium text-sm">Energy Sector Client</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4 text-sm flex-grow">Manufactured critical turbine components for renewable energy project, meeting stringent specifications for 20MW installation.</p>
-                    <div class="grid grid-cols-3 gap-3 text-center">
-                        <div>
-                            <div class="text-lg font-bold text-green-600">20MW</div>
-                            <div class="text-xs text-gray-600">Power Capacity</div>
-                        </div>
-                        <div>
-                            <div class="text-lg font-bold text-green-600">100%</div>
-                            <div class="text-xs text-gray-600">On-Time</div>
-                        </div>
-                        <div>
-                            <div class="text-lg font-bold text-green-600">Zero</div>
-                            <div class="text-xs text-gray-600">Defects</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quality Section - Compact -->
-    <section id="quality" class="section-compact bg-white scroll-offset">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Quality & Certifications</h2>
-                <p class="text-lg text-gray-600">Committed to excellence through rigorous quality standards and certified processes.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <!-- ISO Certification -->
-                <div class="card-compact text-center">
-                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-certificate text-xl text-white"></i>
-                    </div>
-                    <h3 class="text-md font-bold text-industrial-dark mb-2 flex-grow flex items-center justify-center">ISO 9001:2015</h3>
-                    <p class="text-gray-600 text-sm">Quality Management System certified.</p>
-                </div>
-                
-                <!-- Quality Control -->
-                <div class="card-compact text-center">
-                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-search text-xl text-white"></i>
-                    </div>
-                    <h3 class="text-md font-bold text-industrial-dark mb-2 flex-grow flex items-center justify-center">100% Inspection</h3>
-                    <p class="text-gray-600 text-sm">Every component thoroughly inspected.</p>
-                </div>
-                
-                <!-- Traceability -->
-                <div class="card-compact text-center">
-                    <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-barcode text-xl text-white"></i>
-                    </div>
-                    <h3 class="text-md font-bold text-industrial-dark mb-2 flex-grow flex items-center justify-center">Full Traceability</h3>
-                    <p class="text-gray-600 text-sm">Complete material and process tracking.</p>
-                </div>
-                
-                <!-- Performance -->
-                <div class="card-compact text-center">
-                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-chart-line text-xl text-white"></i>
-                    </div>
-                    <h3 class="text-md font-bold text-industrial-dark mb-2 flex-grow flex items-center justify-center">99.5% Acceptance</h3>
-                    <p class="text-gray-600 text-sm">Consistently high quality delivery.</p>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="text-2xl font-bold text-industrial-dark mb-4">Quality Processes</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Statistical Process Control (SPC)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Coordinate Measuring Machine (CMM) Inspection</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Material Certification and Testing</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Incoming Material Inspection</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Final Product Validation</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4 text-center">
-                    <div class="card-compact bg-blue-50">
-                        <div class="text-3xl font-bold text-blue-600 mb-2">±0.005mm</div>
-                        <div class="text-gray-600 text-sm">Precision Tolerance</div>
-                    </div>
-                    <div class="card-compact bg-green-50">
-                        <div class="text-3xl font-bold text-green-600 mb-2">100%</div>
-                        <div class="text-gray-600 text-sm">On-Time Delivery</div>
-                    </div>
-                    <div class="card-compact bg-orange-50">
-                        <div class="text-3xl font-bold text-orange-600 mb-2">24/7</div>
-                        <div class="text-gray-600 text-sm">Quality Monitoring</div>
-                    </div>
-                    <div class="card-compact bg-purple-50">
-                        <div class="text-3xl font-bold text-purple-600 mb-2">Zero</div>
-                        <div class="text-gray-600 text-sm">Customer Complaints</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RFQ Section - Compact -->
-    <section id="rfq" class="section-compact bg-gradient-to-br from-blue-900 to-blue-800 text-white scroll-offset">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Request for Quote</h2>
-                <p class="text-xl text-blue-100">Get a detailed quote for your manufacturing requirements. Our team will respond within 24 hours.</p>
-            </div>
-            
-            <div class="bg-white rounded-lg p-8 text-gray-900">
-                <form action="https://formspree.io/f/mvgqjbqy" method="POST" enctype="multipart/form-data">
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
-                            <input type="text" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Contact Person *</label>
-                            <input type="text" name="contact_person" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Required *</label>
-                            <select name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="">Select Service</option>
-                                <option value="cnc-machining">CNC Machining</option>
-                                <option value="metal-fabrication">Metal Fabrication</option>
-                                <option value="assembly">Assembly Services</option>
-                                <option value="tooling">Tool & Die Making</option>
-                                <option value="quality-control">Quality Control</option>
-                                <option value="engineering">Engineering Services</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Quantity Required</label>
-                            <input type="number" name="quantity" min="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Project Description *</label>
-                        <textarea name="description" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Please provide detailed description of your requirements, specifications, tolerances, materials, etc."></textarea>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Upload Files</label>
-                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                            <input type="file" name="files" multiple accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.jpg,.jpeg,.png" class="hidden" id="file-upload">
-                            <label for="file-upload" class="cursor-pointer">
-                                <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600">Click to upload drawings, specifications, or reference images</p>
-                                <p class="text-sm text-gray-500">Supported formats: PDF, DWG, DXF, STEP, JPG, PNG (Max 10MB each)</p>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="flex items-center">
-                            <input type="checkbox" name="data_consent" required class="mr-2">
-                            <span class="text-sm text-gray-700">I consent to Allied Industries processing my data for this quote request and agree to the privacy policy.</span>
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        Submit RFQ
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section - Compact -->
+    <!-- Contact Section - Streamlined -->
     <section id="contact" class="section-compact bg-gray-50 scroll-offset">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
                 <h2 class="text-3xl lg:text-4xl font-bold text-industrial-dark mb-4">Contact Us</h2>
-                <p class="text-lg text-gray-600">Get in touch with our team for any inquiries or support.</p>
+                <p class="text-lg text-gray-600">Get in touch with our team for manufacturing solutions.</p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Contact Information -->
-                <div class="space-y-6">
-                    <div class="card-standard">
-                        <h3 class="text-xl font-bold text-industrial-dark mb-4">Allied Industries</h3>
-                        <div class="space-y-4 flex-grow">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
-                                <div>
-                                    <div class="font-medium text-gray-900">Address</div>
-                                    <div class="text-gray-600 text-sm">A-13, PHASE-II, MAYAPURI INDUSTRIAL AREA<br>Near Mayapuri Thana<br>New Delhi-110064, Delhi, India</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <i class="fas fa-phone text-green-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium text-gray-900">Phone</div>
-                                    <div class="text-gray-600 text-sm">+91 8447223590</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-orange-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium text-gray-900">Email</div>
-                                    <div class="text-gray-600 text-sm">srivastavau58@gmail.com</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <i class="fas fa-clock text-purple-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium text-gray-900">Business Hours</div>
-                                    <div class="text-gray-600 text-sm">Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</div>
-                                </div>
+                <div class="card-standard">
+                    <h3 class="text-xl font-bold text-industrial-dark mb-6">Allied Industries</h3>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-medium text-gray-900">Address</div>
+                                <div class="text-gray-600 text-sm">A-13, PHASE-II, MAYAPURI INDUSTRIAL AREA<br>Near Mayapuri Thana<br>New Delhi-110064, Delhi, India</div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="card-standard">
-                        <h3 class="text-lg font-bold text-industrial-dark mb-4">Why Choose Allied Industries?</h3>
-                        <ul class="space-y-2 text-sm text-gray-700 flex-grow">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                25+ years of manufacturing excellence
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                ISO 9001:2015 certified quality system
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                Advanced CNC machining capabilities
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                100% on-time delivery record
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
-                                Competitive pricing with quality assurance
-                            </li>
-                        </ul>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-green-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium text-gray-900">Phone</div>
+                                <div class="text-gray-600 text-sm">+91 8447223590</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-orange-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium text-gray-900">Email</div>
+                                <div class="text-gray-600 text-sm">srivastavau58@gmail.com</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Contact Form -->
                 <div class="card-standard">
-                    <h3 class="text-xl font-bold text-industrial-dark mb-6">Send us a Message</h3>
+                    <h3 class="text-xl font-bold text-industrial-dark mb-6">Get Quote</h3>
                     <form action="https://formspree.io/f/xzzvlaav" method="POST" class="flex-grow flex flex-col">
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
                             <div>
@@ -1598,37 +901,19 @@
                             </div>
                         </div>
                         
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                                <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                                <select name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                    <option value="general">General Inquiry</option>
-                                    <option value="quote">Request Quote</option>
-                                    <option value="support">Technical Support</option>
-                                    <option value="partnership">Partnership</option>
-                                </select>
-                            </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
                         
                         <div class="mb-4 flex-grow">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                            <textarea name="message" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="flex items-center">
-                                <input type="checkbox" name="consent" required class="mr-2">
-                                <span class="text-sm text-gray-700">I agree to the processing of my personal data for this inquiry.</span>
-                            </label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Requirements *</label>
+                            <textarea name="message" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" placeholder="Please describe your manufacturing requirements..."></textarea>
                         </div>
                         
                         <button type="submit" class="w-full bg-orange-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-700 transition-colors mt-auto">
                             <i class="fas fa-paper-plane mr-2"></i>
-                            Send Message
+                            Send Inquiry
                         </button>
                     </form>
                 </div>
@@ -1636,10 +921,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Simplified -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Company Info -->
                 <div>
                     <div class="logo-container mb-4">
@@ -1651,44 +936,23 @@
                             <div class="logo-tagline text-gray-400">Precision Manufacturing</div>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm mb-4">Leading precision manufacturing company delivering excellence since 1998.</p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#capabilities" class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
-                        <li><a href="#industries" class="text-gray-400 hover:text-white transition-colors">Industries</a></li>
-                        <li><a href="#quality" class="text-gray-400 hover:text-white transition-colors">Quality</a></li>
-                    </ul>
+                    <p class="text-gray-400 text-sm">ISO-certified precision manufacturing company delivering excellence since 1998.</p>
                 </div>
                 
                 <!-- Services -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">CNC Machining</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Metal Fabrication</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Assembly Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Quality Control</a></li>
+                        <li><a href="#capabilities" class="text-gray-400 hover:text-white transition-colors">CNC Machining</a></li>
+                        <li><a href="#capabilities" class="text-gray-400 hover:text-white transition-colors">Metal Fabrication</a></li>
+                        <li><a href="#capabilities" class="text-gray-400 hover:text-white transition-colors">Quality Control</a></li>
                     </ul>
                 </div>
                 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
                     <div class="space-y-2 text-sm text-gray-400">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
-                            <span>A-13, PHASE-II, MAYAPURI<br>New Delhi-110064, India</span>
-                        </div>
                         <div class="flex items-center">
                             <i class="fas fa-phone mr-2"></i>
                             <span>+91 8447223590</span>
@@ -1697,17 +961,17 @@
                             <i class="fas fa-envelope mr-2"></i>
                             <span>srivastavau58@gmail.com</span>
                         </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>New Delhi-110064, India</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
                 <div class="text-sm text-gray-400">
-                    © 2024 Allied Industries. All rights reserved.
-                </div>
-                <div class="text-sm text-gray-400 mt-2 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors mr-4">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    © 2024 Allied Industries. All rights reserved. | ISO 9001:2015 Certified
                 </div>
             </div>
         </div>
@@ -1742,13 +1006,12 @@
             });
         });
         
-        // Enhanced smooth scrolling for navigation links with offset correction
+        // Enhanced smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    // Use the scroll-margin-top CSS property for proper offset
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -1762,18 +1025,14 @@
             });
         });
         
-        // File upload display
-        const fileUpload = document.getElementById('file-upload');
-        if (fileUpload) {
-            fileUpload.addEventListener('change', function() {
-                const label = this.parentElement.querySelector('p');
-                if (this.files.length > 0) {
-                    label.textContent = `${this.files.length} file(s) selected`;
-                } else {
-                    label.textContent = 'Click to upload drawings, specifications, or reference images';
-                }
+        // Logo click handler
+        document.querySelector('.logo-container').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('home').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        }
+        });
         
         // Add fade-in animation on scroll
         const observerOptions = {
@@ -1792,15 +1051,6 @@
         // Observe all sections
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
-        });
-
-        // Logo click handler
-        document.querySelector('.logo-container').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('home').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
         });
     </script>
 </body>
